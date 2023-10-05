@@ -1,0 +1,14 @@
+[Unit]
+Description=Service for start my web server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=java -jar /opt/sample/service.jar
+User=vlad
+RestartSec=10
+Restart=always
+Environment=PORT=8888
+
+[Install]
+WantedBy=multi-user.target
